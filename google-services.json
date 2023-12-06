@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "549925747072",
+    "project_id": "clpp-835af",
+    "storage_bucket": "clpp-835af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549925747072:android:483c07abed504825e02965",
+        "android_client_info": {
+          "package_name": "com.example.clp3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA4lmnTo8j7xZIalgji2sL8i-0symNA-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
