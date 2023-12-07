@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddFragment">
+
+
+    <Button
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load image from FirebaseStorage"
+        android:textAllCaps="false"
+        android:onClick="clickLoad"/>
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/cs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="select image"
+        android:textAllCaps="false"
+        android:layout_gravity="right"
+        android:onClick="clickSelect" />
+
+    <Button
+        android:id="@+id/cu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="upload"
+        android:textAllCaps="false"
+        android:onClick="clickUpload" />
+
+
+</LinearLayout>

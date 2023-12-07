@@ -10,10 +10,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven ("https://naver.jfrog.io/artifactory/maven/")
+        maven("https://naver.jfrog.io/artifactory/maven/")
     }
 }
 
-
-rootProject.name = "clp1"
+rootProject.name = "clp3"
 include(":app")
+ 
