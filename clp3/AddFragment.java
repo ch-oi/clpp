@@ -131,7 +131,7 @@ public class AddFragment extends Fragment {
         switch (requestCode) {
             case 10:
                 if (resultCode == RESULT_OK && data != null) {
-                    Uri imgUri = data.getData();
+                    imgUri = data.getData();
                     Glide.with(this).load(imgUri).into(iv);
                 }
                 break;
