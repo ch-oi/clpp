@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,10 +31,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ImageFragment extends Fragment {
 
-    TextView tv, tv2, tv3;
+    TextView tv, tv2, tv3, likeCountTextView;
     EditText editText, editTextt, editTexttt;
     private Button upload, uploadd, uploaddd;
+    private ToggleButton button_favorite2;
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference likeReference = firebaseDatabase.getInstance().getReference().child("likes");
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -43,6 +46,8 @@ public class ImageFragment extends Fragment {
         tv = view.findViewById(R.id.tv);
         tv2 = view.findViewById(R.id.tv2);
         tv3 = view.findViewById(R.id.tv3);
+        likeCountTextView = view.findViewById(R.id.likeCountTextView);
+        button_favorite2 = view.findViewById(R.id.button_favorite2);
         editText = view.findViewById(R.id.editText);
         editTextt = view.findViewById(R.id.editTextt);
         editTexttt = view.findViewById(R.id.editTexttt);
@@ -50,7 +55,10 @@ public class ImageFragment extends Fragment {
         uploadd = view.findViewById(R.id.uploadd);
         uploaddd = view.findViewById(R.id.uploaddd);
 
-        //tv.setText();
+        button_favorite2.setOnClickListener(buttonView -> {
+            boolean isChecked = ((ToggleButton) buttonView).isChecked();
+            onLikeToggleChanged(isChecked);});
+        loadLikeData();
 
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +146,35 @@ public class ImageFragment extends Fragment {
 
         return view;
 
+    }
+    private void onLikeToggleChanged(boolean isChecked) {
+        // 좋아요 상태가 변경될 때 호출되는 메서드
+        likeReference.setValue(new LikeModel(getCurrentLikeCount(isChecked), isChecked));
+    }
+    private void loadLikeData() {
+        likeReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                LikeModel likeModel = dataSnapshot.getValue(LikeModel.class);
+                if (likeModel != null) {
+                    updateUI(likeModel);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("Firebase", "Error loading like data", databaseError.toException());
+            }
+        });
+    }
+    private void updateUI(LikeModel likeModel) {
+        likeCountTextView.setText(String.valueOf(likeModel.getLikeCount()) + " Likes");
+        //button_favorite2.setChecked(likeModel.isLiked());
+    }
+    private int getCurrentLikeCount(boolean isChecked) {
+        // 현재 좋아요 개수를 반환
+        // 실제로는 사용자의 데이터를 기반으로 판단해야 함
+        return isChecked ? 3 : 2;
     }
 
 }
