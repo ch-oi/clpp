@@ -52,6 +52,15 @@
             app:layout_constraintStart_toStartOf="@id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+        <TextView
+            android:id="@+id/likeCountTextView"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            android:text="0 Likes"
+            app:layout_constraintStart_toStartOf="@id/button_favorite2"
+            app:layout_constraintTop_toBottomOf="@+id/button_favorite2"/>
+
         <EditText
             android:id="@+id/editText"
             android:layout_width="300dp"
@@ -60,8 +69,8 @@
             android:ems="10"
             android:inputType="text"
             android:text=""
-            app:layout_constraintStart_toStartOf="@id/button_favorite2"
-            app:layout_constraintTop_toBottomOf="@+id/button_favorite2" />
+            app:layout_constraintStart_toStartOf="@id/likeCountTextView"
+            app:layout_constraintTop_toBottomOf="@+id/likeCountTextView" />
 
         <Button
             android:id="@+id/upload"
@@ -106,6 +115,15 @@
             android:textOn=""
             app:layout_constraintStart_toStartOf="@id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/likeCountTextView2"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            android:text="0 Likes"
+            app:layout_constraintStart_toStartOf="@id/button_favorite3"
+            app:layout_constraintTop_toBottomOf="@+id/button_favorite3"/>
 
         <EditText
             android:id="@+id/editTextt"
@@ -161,6 +179,15 @@
             android:textOn=""
             app:layout_constraintStart_toStartOf="@id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/likeCountTextView3"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            android:text="0 Likes"
+            app:layout_constraintStart_toStartOf="@id/button_favorite2"
+            app:layout_constraintTop_toBottomOf="@+id/button_favorite2"/>
 
         <EditText
             android:id="@+id/editTexttt"
