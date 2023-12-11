@@ -1,42 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".AddFragment">
-
 
     <Button
         android:id="@+id/cl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Load image from FirebaseStorage"
-        android:textAllCaps="false"
-        android:onClick="clickLoad"/>
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/iv"
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        android:layout_weight="1"/>
-
-    <Button
-        android:id="@+id/cs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="select image"
-        android:textAllCaps="false"
-        android:layout_gravity="right"
-        android:onClick="clickSelect" />
-
-    <Button
-        android:id="@+id/cu"
         android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/cl" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="upload"
-        android:textAllCaps="false"
-        android:onClick="clickUpload" />
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95">
 
 
-</LinearLayout>
+        <Button
+            android:id="@+id/cs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button1"
+            android:text="select image"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/cu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button2"
+            android:text="upload"
+            app:layout_constraintStart_toStartOf="@id/cs" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
