@@ -4,13 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AddFragment">
 
     <Button
         android:id="@+id/cl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Load image from FirebaseStorage"
+        android:text="Select Location"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/ttv"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/cl"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -19,7 +31,7 @@
         android:layout_height="550dp"
         android:layout_weight="1"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/cl" />
+        app:layout_constraintTop_toBottomOf="@+id/ttv" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
