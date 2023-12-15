@@ -53,7 +53,7 @@ public class AddFragment extends Fragment {
     TextView ttv;
     Uri imgUri;
 
-    private String[] items = {"문수지", "2호관", "벽강아트센터"};
+    private String[] items = {"경운대학교", "경주시 안압지", "부산 광안리 해수욕장"};
     private boolean[] checkedItems = {false, false, false};
     private StringBuilder selectedItems = new StringBuilder();
 
